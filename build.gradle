@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.70'
+    ext.compile_sdk_version = 28
+    ext.min_sdk_Version = 19
+    ext.target_sdk_version = 28
+    ext.version_code = 100
+    ext.version_name = '1.0.0'
+    ext.suport_library_version = '28.0.0'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.novoda:bintray-release:+'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+    tasks.withType(Javadoc).all {
+        enabled = false
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
