@@ -1,6 +1,8 @@
 # multiplechoice
 recyclerview about single choice and multiple choice
 ##screenshot
+<div>
+<image src="https://github.com/joketng/multiplechoice/blob/master/pic/chose.png" width=40% height=40% />
 
 ## Quick Setup
 ```
