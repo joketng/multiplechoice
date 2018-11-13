@@ -42,12 +42,6 @@ abstract class ChoseAdapter<T : BaseChoseBean>@JvmOverloads constructor(val cont
         return holder
     }
 
-    abstract fun createCustomView(layout:LinearLayout)
-
-    abstract fun bindData(holder: MyViewHolder)
-
-    override fun getItemCount(): Int = itemList.size
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         bindData(holder)
         if (itemList[position].selected) {
@@ -56,6 +50,12 @@ abstract class ChoseAdapter<T : BaseChoseBean>@JvmOverloads constructor(val cont
             notSelectedCallBack?.invoke(holder)
         }
     }
+
+    abstract fun createCustomView(layout:LinearLayout)
+
+    abstract fun bindData(holder: MyViewHolder)
+
+    override fun getItemCount(): Int = itemList.size
 
     fun setOnIsSelectedListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<out BaseChoseBean> {
         selectedCallBack = listener

@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
 
 }
 
@@ -42,6 +46,18 @@ publish {
     groupId = 'com.joketng'         //compile引用时的第1部分groupId
     artifactId = 'choseutil'     //compile引用时的第2部分项目名
     publishVersion = '1.0.0'    //compile引用时的第3部分版本号
-    desc = 'This about single chose and multiple chose by recyclerView for Android'
-    website = 'https://github.com/joketng'
+    desc = 'This about single choice and multiple choice by recyclerView for Android'
+    website = 'https://github.com/joketng/multiplechoice'
+}
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //加上这些
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
 }
