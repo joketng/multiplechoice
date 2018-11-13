@@ -57,22 +57,22 @@ abstract class ChoseAdapter<T : BaseChoseBean>@JvmOverloads constructor(val cont
 
     override fun getItemCount(): Int = itemList.size
 
-    fun setOnIsSelectedListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<out BaseChoseBean> {
+    fun setOnIsSelectedListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<T> {
         selectedCallBack = listener
         return this
     }
 
-    fun setOnNotSelectedListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<out BaseChoseBean> {
+    fun setOnNotSelectedListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<T> {
         notSelectedCallBack = listener
         return this
     }
 
-    fun setOnClickListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<out BaseChoseBean> {
+    fun setOnClickListener(listener: ((MyViewHolder) -> Unit)): ChoseAdapter<T> {
         clickCallBack = listener
         return this
     }
 
-    fun setSingleChose(chose: Boolean): ChoseAdapter<out BaseChoseBean>  {
+    fun setSingleChose(chose: Boolean): ChoseAdapter<T>  {
         isSingleChose = chose
         return this
     }

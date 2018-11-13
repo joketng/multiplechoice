@@ -28,7 +28,7 @@ Add LayoutManager
 ```
 then set recyclerAdapter
 ```kotlin
-rv_chose.adapter = object :ChoseAdapter<MyChoseBean>(this, listContent){
+choseAdapter = object :ChoseAdapter<MyChoseBean>(this, listContent){
             override fun bindData(holder: MyViewHolder) {
                 holder.itemView.tv_text.text = listContent[holder.layoutPosition].title
             }
@@ -36,8 +36,7 @@ rv_chose.adapter = object :ChoseAdapter<MyChoseBean>(this, listContent){
             override fun createCustomView(layout: LinearLayout) {
                 LayoutInflater.from(context).inflate(R.layout.item_custom, layout, true)
             }
-        }
-        rv_chose.adapter  = choseAdapter.setOnNotSelectedListener {
+        }.setOnNotSelectedListener {
             it.itemView.img_check.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.vector_drawable_check_box_off))
         }.setOnIsSelectedListener {
             it.itemView.img_check.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.vector_drawable_check_box_on))

@@ -33,15 +33,14 @@ class MainActivity : AppCompatActivity() {
             override fun createCustomView(layout: LinearLayout) {
                 LayoutInflater.from(context).inflate(R.layout.item_custom, layout, true)
             }
-        }
-        rv_chose.adapter  = choseAdapter.setOnNotSelectedListener {
+        }.setOnNotSelectedListener {
             it.itemView.img_check.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.vector_drawable_check_box_off))
         }.setOnIsSelectedListener {
             it.itemView.img_check.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.vector_drawable_check_box_on))
         }.setOnClickListener {
 //            Toast.makeText(context,"${it.adapterPosition}",Toast.LENGTH_SHORT).show()
         }.setSingleChose(false)
-
+        rv_chose.adapter = choseAdapter
         btn_single_chose.setOnClickListener {
             choseAdapter.setSingleChose(true)
         }
