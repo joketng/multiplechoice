@@ -5,7 +5,7 @@ recyclerview about single choice and multiple choice
 ## Quick Setup
 ```
 dependencies {
-	    implementation 'com.joketng:choseutil:1.0.0'
+	 implementation 'com.joketng:choseutil:1.0.0'
 }
 ```
 
